@@ -1,10 +1,12 @@
+import Fotter from "./_components/Fotter";
 import HeroSection from "./_components/HeroSection";
 import Navbar from "./_components/Navbar";
+import Project from "./_components/Project";
 import Skills from "./_components/Skills";
 
 export default function page() {
   return (
-    <div className="min-h-[400vh] bg-black over-hidden">
+    <div className="min-h-screen bg-black over-hidden">
       <div className=" dark:bg-black bg-white  dark:bg-grid-white/[0.05] bg-grid-black/[0.2]">
         <div className="max-w-7xl mx-auto p-5 ">
           <Navbar />
@@ -14,6 +16,8 @@ export default function page() {
       </div>
       <div className="max-w-7xl mx-auto p-5 mt-20">
         <Skills />
+        <Project />
+        <Fotter />
       </div>
     </div>
   );
