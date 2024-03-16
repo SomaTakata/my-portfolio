@@ -26,7 +26,7 @@ export default function Navbar({ className }: { className?: string }) {
   return (
     <nav
       className={cn(
-        "py-10 flex justify-between items-center animate-move-down",
+        "py-2 mb-28 lg:mb-0  lg:py-6  flex justify-between items-center animate-move-down",
         className
       )}
     >
