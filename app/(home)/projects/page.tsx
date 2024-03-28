@@ -1,6 +1,21 @@
 "use client";
 import { motion } from "framer-motion";
 
+const gridContainerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const gridSquareVariants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
+
 export default function page() {
   return (
     <motion.div
@@ -8,46 +23,52 @@ export default function page() {
     from-violet-800 via-pink-700 to-orange-700  h-screen"
     >
       <motion.section
-        variants={{
-          hidden: { opacity: 0 },
-          show: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.3,
-            },
-          },
-        }}
+        variants={gridContainerVariants}
         initial="hidden"
         animate="show"
         className="grid grid-cols-3 p-10 gap-10"
       >
+        {/* Fade Up */}
         <motion.div
-          variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
+          variants={gridSquareVariants}
+          className="bg-gray-200/30 backdrop-blur-lg
+    border border-gray-200/30 shadow-lg aspect-square rounded-lg justify-center flex items-center gap-2 sm:gap-5 lg:gap-10"
+        >
+          <motion.div
+            className="w-6 h-6 sm:w-10 sm:h-10 lg:w-20 lg:h-20  bg-stone-100 rounded-lg"
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          ></motion.div>
+          <motion.div
+            className="w-6 h-6 sm:w-10 sm:h-10 lg:w-20 lg:h-20  bg-stone-100 rounded-full"
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          ></motion.div>
+        </motion.div>
+        <motion.div
+          variants={gridSquareVariants}
           className="bg-gray-200/30 backdrop-blur-lg
     border border-gray-200/30 shadow-lg aspect-square rounded-lg justify-center flex items-center gap-10"
         ></motion.div>
         <motion.div
-          variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
+          variants={gridSquareVariants}
           className="bg-gray-200/30 backdrop-blur-lg
     border border-gray-200/30 shadow-lg aspect-square rounded-lg justify-center flex items-center gap-10"
         ></motion.div>
         <motion.div
-          variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
+          variants={gridSquareVariants}
           className="bg-gray-200/30 backdrop-blur-lg
     border border-gray-200/30 shadow-lg aspect-square rounded-lg justify-center flex items-center gap-10"
         ></motion.div>
         <motion.div
-          variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
+          variants={gridSquareVariants}
           className="bg-gray-200/30 backdrop-blur-lg
     border border-gray-200/30 shadow-lg aspect-square rounded-lg justify-center flex items-center gap-10"
         ></motion.div>
         <motion.div
-          variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
-          className="bg-gray-200/30 backdrop-blur-lg
-    border border-gray-200/30 shadow-lg aspect-square rounded-lg justify-center flex items-center gap-10"
-        ></motion.div>
-        <motion.div
-          variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
+          variants={gridSquareVariants}
           className="bg-gray-200/30 backdrop-blur-lg
     border border-gray-200/30 shadow-lg aspect-square rounded-lg justify-center flex items-center gap-10"
         ></motion.div>
