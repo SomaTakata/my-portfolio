@@ -20,7 +20,7 @@ export default function page() {
   return (
     <motion.div
       className="flex flex-col gap-10 overflow-x-hidden bg-gradient-to-br
-    from-violet-800 via-pink-700 to-orange-700  h-screen"
+    from-black via-gray-800 to-orange-700  h-screen"
     >
       <motion.section
         variants={gridContainerVariants}
@@ -39,12 +39,22 @@ export default function page() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+            whileHover={{
+              scale: 1.1,
+              backgroundColor: "#615ae0",
+              color: "#ffffff",
+            }}
           ></motion.div>
           <motion.div
             className="w-6 h-6 sm:w-10 sm:h-10 lg:w-20 lg:h-20  bg-stone-100 rounded-full"
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+            whileHover={{
+              scale: 1.1,
+              backgroundColor: "#cc4a6c",
+              color: "#ffffff",
+            }}
           ></motion.div>
         </motion.div>
         {/* Shape Shifting */}
@@ -68,11 +78,25 @@ export default function page() {
             }}
           ></motion.div>
         </motion.div>
+
         <motion.div
           variants={gridSquareVariants}
           className="bg-gray-200/30 backdrop-blur-lg
     border border-gray-200/30 shadow-lg aspect-square rounded-lg justify-center flex items-center gap-10"
-        ></motion.div>
+        >
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            whileHover={{
+              scale: 1.1,
+              backgroundColor: "#5ae085",
+              color: "#ffffff",
+            }}
+            transition={{ bounceDamping: 10, bounceStiffness: 600 }}
+            className="bg-white sm:w-1/2 px-4 py-1 sm:py-4 rounded-lg   text-black font-bold tracking-wide"
+          >
+            Button
+          </motion.button>
+        </motion.div>
         <motion.div
           variants={gridSquareVariants}
           className="bg-gray-200/30 backdrop-blur-lg
